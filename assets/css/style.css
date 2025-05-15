@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Jost', Arial, sans-serif;
   margin: 0;
   background: #fff;
   color: #111;
@@ -13,6 +13,12 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 24px 40px 0 40px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 .logo {
   display: flex;
@@ -30,6 +36,11 @@ body {
   font-weight: 400;
 }
 .nav-links {
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 111.111% */
   display: flex;
   gap: 32px;
   font-size: 16px;
@@ -91,7 +102,6 @@ body {
   padding: 0 40px 0 40px;
   margin-top: 40px;
   align-items: flex-start;
-  justify-content: space-between;
 }
 .hero-content {
   flex: 0 0 44%;
@@ -101,31 +111,43 @@ body {
   display: inline-block;
   background: #fbbd08;
   color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
+
+  text-align: center;
+  font-family: Jost;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
   padding: 3px 10px 2px 10px;
   border-radius: 2px;
   margin-bottom: 18px;
 }
 .hero-title {
-  font-size: 56px;
-  font-weight: 600;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 86.4px;
   margin: 0 0 12px 0;
   letter-spacing: -2px;
   line-height: 1.08;
 }
 .hero-subtitle {
-  font-size: 32px;
-  margin: 0 0 30px 0;
+  font-size: 50px;
+  font-style: normal;
   font-weight: 400;
+  line-height: 25.2px;
+  margin: 0 0 30px 0;
 }
 .hero-desc {
-  font-size: 17px;
-  color: #444;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 33.8px;
+  color: #333;
   margin-bottom: 36px;
-  max-width: 380px;
+  max-width: 700px;
 }
+
 .features {
   display: flex;
   gap: 46px;
@@ -141,14 +163,12 @@ body {
 .feature-icon {
   width: 35px;
   height: 35px;
-  background: #eee;
   border-radius: 50%;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 22px;
-  color: #b0b0b0;
 }
 .feature-title {
   font-size: 10px;
@@ -182,15 +202,6 @@ body {
   position: relative;
   box-shadow: 0 4px 16px 0 #0001;
 }
-.hero-img:nth-child(1) {
-  background: #85b8d7;
-}
-.hero-img:nth-child(2) {
-  background: #ebc0c9;
-}
-.hero-img:nth-child(3) {
-  background: #b0c9a2;
-}
 .hero-img span {
   color: #fff;
   font-size: 20px;
@@ -202,10 +213,9 @@ body {
 /* ABOUT SECTION */
 .about-section {
   width: 100%;
-  background: #f7fafd;
-  padding: 60px 0 30px 0;
+  padding: 60px 0 30px 60px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 .about-content {
   width: 1100px;
@@ -240,39 +250,79 @@ body {
   gap: 18px;
 }
 .about-title {
-  font-size: 44px;
-  font-weight: 500;
+  width: 528px;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 86.4px;
   margin: 0 0 5px 0;
 }
 .about-desc {
-  color: #333;
-  font-size: 17px;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27.5px;
   margin-bottom: 5px;
-  max-width: 540px;
+  max-width: 609px;
 }
 .about-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 стовпці */
+  gap: 12px 16px;
+  max-width: 600px; /* підбери під дизайн */
   margin-top: 8px;
 }
+
+/* Ширина кнопок — 100%, щоб рівно йшли */
 .about-filters button {
   background: #111;
   color: #fff;
   border: none;
   border-radius: 2px;
-  padding: 7px 18px 6px 18px;
-  font-size: 14px;
+  padding: 12px 18px;
+  font-size: 16px;
   letter-spacing: 0.5px;
   font-family: inherit;
   font-weight: 500;
   cursor: pointer;
-  margin-bottom: 4px;
   transition: background 0.2s;
+  width: 100%;
+  text-align: left;
 }
+
 .about-filters button:hover {
   background: #ffc400;
   color: #111;
+}
+
+/* Окремі позиції для 2-го і 4-го рядів */
+.about-filters button:nth-child(4) {
+  grid-column: 1 / 2;
+  grid-row: 2;
+}
+.about-filters button:nth-child(5) {
+  grid-column: 2 / 3;
+  grid-row: 2;
+}
+.about-filters button:nth-child(6) {
+  grid-column: 1 / 2;
+  grid-row: 3;
+}
+.about-filters button:nth-child(7) {
+  grid-column: 2 / 3;
+  grid-row: 3;
+}
+.about-filters button:nth-child(8) {
+  grid-column: 3 / 4;
+  grid-row: 3;
+}
+.about-filters button:nth-child(9) {
+  grid-column: 1 / 2;
+  grid-row: 4;
+}
+.about-filters button:nth-child(10) {
+  grid-column: 2 / 3;
+  grid-row: 4;
 }
 
 /* LANDING PAGES */
@@ -293,7 +343,10 @@ body {
 .landing-title-label {
   background: #111;
   color: #fff;
-  font-size: 19px;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
   padding: 5px 20px 4px 20px;
   border-radius: 3px;
   font-weight: 500;
@@ -347,9 +400,10 @@ body {
   color: #1c1c1c;
 }
 .landing-caption {
-  font-size: 15px;
-  color: #222;
-  font-weight: 500;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32.5px;
   margin-left: 6px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -372,7 +426,10 @@ body {
 .company-title-label {
   background: #111;
   color: #fff;
-  font-size: 19px;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
   padding: 5px 20px 4px 20px;
   border-radius: 3px;
   font-weight: 500;
@@ -436,9 +493,11 @@ body {
   color: #444;
 }
 .company-caption {
-  font-size: 15px;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32.5px;
   color: #222;
-  font-weight: 500;
   margin-left: 6px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -455,7 +514,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 80px;
+  padding: 0 0 80px 60px;
 }
 .cms-title-row {
   margin: 26px 0 22px 0;
@@ -465,7 +524,10 @@ body {
 .cms-title-label {
   background: #111;
   color: #fff;
-  font-size: 19px;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
   padding: 5px 20px 4px 20px;
   border-radius: 3px;
   font-weight: 500;
@@ -552,7 +614,10 @@ body {
   color: #4527a0;
 }
 .cms-caption {
-  font-size: 15px;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32.5px;
   color: #222;
   font-weight: 500;
   margin-left: 6px;
@@ -569,8 +634,8 @@ body {
   padding-bottom: 80px;
 }
 .utility-title-row {
-  width: 1100px;
-  max-width: 96vw;
+  width: 100%;
+  padding-left: 8%;
   margin: 26px 0 22px 0;
   display: flex;
   align-items: flex-start;
@@ -578,7 +643,10 @@ body {
 .utility-title-label {
   background: #111;
   color: #fff;
-  font-size: 19px;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
   padding: 5px 20px 4px 20px;
   border-radius: 3px;
   font-weight: 500;
@@ -637,7 +705,10 @@ body {
   color: #232323;
 }
 .utility-caption {
-  font-size: 15px;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32.5px;
   color: #222;
   font-weight: 500;
   margin-left: 6px;
@@ -670,8 +741,10 @@ body {
   min-width: 340px;
 }
 .footer-news-title {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px;
   margin-bottom: 7px;
 }
 .footer-form {
@@ -704,8 +777,9 @@ body {
   height: 100%;
 }
 .footer-social {
+  padding-top: 80px;
   display: flex;
-  gap: 28px;
+  gap: 45px;
   margin-top: 36px;
 }
 .social-icon {
@@ -733,14 +807,19 @@ body {
   min-width: 140px;
 }
 .footer-col-title {
-  font-size: 22px;
+  font-size: 24px;
+  font-style: normal;
   font-weight: 400;
+  line-height: 30px;
   margin-bottom: 12px;
   margin-top: 3px;
 }
 .footer-sub-col-title {
-  font-size: 17px;
+  color: #333;
+  font-size: 15px;
+  font-style: normal;
   font-weight: 400;
+  line-height: 20px;
   margin: 15px 0 7px 0;
 }
 .footer-col a {
@@ -766,5 +845,9 @@ body {
 }
 .footer-powered,
 .footer-created {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10px;
   opacity: 0.82;
 }
